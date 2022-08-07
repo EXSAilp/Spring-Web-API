@@ -23,11 +23,6 @@ public class MenuController {
         return service.create(menu);
     }
 
-    @GetMapping("/{id}")
-    public Menu getMenuById(@PathVariable UUID id) {
-        return service.getMenuById(id);
-    }
-
     @PutMapping
     public Menu update(@RequestBody Menu menu) {
         return service.update(menu);
@@ -36,6 +31,11 @@ public class MenuController {
     @DeleteMapping("/{id}")
     public Menu delete(@PathVariable UUID id) {
         return service.delete(id);
+    }
+
+    @GetMapping("/{id}")
+    public Menu getMenuById(@PathVariable UUID id) {
+        return service.getMenuById(id);
     }
 
     @GetMapping("/name/{name}")
